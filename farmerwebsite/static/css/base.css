@@ -97,6 +97,8 @@ img {vertical-align: middle;}
   color: white;
 }
 .footer {
+   position: fixed;
+   bottom: 0px;
    width: 100%;
    background-color: red;
    color: white;
