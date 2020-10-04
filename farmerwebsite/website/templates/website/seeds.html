@@ -1,0 +1,37 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+ {% block title %}
+   <link rel="stylesheet" href="{% static 'css/seeds.css' %}">
+ {% endblock  %}
+{% block content %}
+
+<div id="hd">
+  Affiliations
+</div>
+<!--
+      ==================================================
+      Header Section End
+      ================================================== -->
+  <!--
+      ==================================================
+      Cards Section Start
+      ================================================== -->
+<div class="row">
+  {% for i in content%}
+  <div class="column">
+    <div class="card">
+      <h3>{{i.name}}</h3>
+      <p>{{i.description}}</p>
+      <p>Some text</p>
+      <a href="{% url 'create_order'%}">ORDER</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+   <!--
+       ==================================================
+       Cards Section End
+       ================================================== -->
+   {% endblock  %}

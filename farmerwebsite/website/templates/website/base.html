@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+{% block title%}
+    <title>Trudawn Solutions</title>
+    {% endblock %}
+
+<link rel="stylesheet" type="text/css"  href="{% static '/css/base.css' %}">
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+  <div class="navbar-header">
+    <a class="navbar-brand" href="{% url '' %}">WebSiteName</a>
+  </div>
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="{% url '' %}">Home</a></li>
+    <li><a href="{% url 'seeds' %}">Seeds</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+</div>
+</nav>
+{% block content %}
+
+
+{% endblock %}
+
+<div class="footer">
+  <div class="footer-links1">
+    <p style="width:55vw">QUICK LINKS</p>
+    <ul style=" width: 6vw; margin-left: 24vw;">
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+    </ul>
+  </div>
+  <div class="footer-links2">
+    <p style="width:30vw">QUICK LINKS</p>
+    <ul style="width: 6vw;margin-left: 10vw;">
+      <li>link</li>
+      <li>link</li>
+      <li>link</li>
+    </ul>
+  </div>
+  <div>
+    SOCIAL MEDIA ICONS
+  </div>
+</div>
+</body>
+</html>
