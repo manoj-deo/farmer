@@ -1,12 +1,14 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
+
 {% block content %}
 
 <form action="" method="POST">
   {% csrf_token %}
+  <br>
   {{form}}
-
+<br>
   <input type="submit" name="Submit">
 </form>
 
