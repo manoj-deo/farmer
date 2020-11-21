@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"  href="{% static '/css/base.css' %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+{% block title%}
+    <title>Farmer</title>
+{% endblock %}
+
+</head>
+<body>
+  <!-- NAVBAR ON DESKTOP -->
+<div class="main">
+<nav class="navbar navbar-inverse">
+<div class="container-fluid">
+  <ul class="nav navbar-nav">
+    <li> <a href="{% url '' %}"><img src="{% static "images/logo.jpg" %}" style="  width: 50px;"></a></li>
+    <li class="active"><a href="{% url '' %}">Home</a></li>
+    <li><a href="{% url 'seeds' %}">Seeds</a></li>
+    <li><a href="{% url 'contact' %}">Contact</a></li>
+  </ul>
+</div>
+</nav>
+</div>
+
+  <!-- NAVBAR ON MOBILE -->
+<div class="mobile-container">
+
+<!-- Top Navigation Menu -->
+<div class="topnav">
+  <a href="{% url '' %}" class="active"><img src="{% static "images/logo.jpg" %}" style="  width: 50px;"></a>
+  <div id="myLinks">
+    <a href="{% url '' %}">Home</a>
+    <a href="{% url 'seeds' %}">Seeds</a>
+    <a href="{% url 'contact' %}">Contact</a>
+  </div>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+{% block content %}
+
+
+{% endblock %}
+
+<div class="footer">
+
+  <div>
+    FOLLOW US ON
+    <br>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-google"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <a href="#" class="fa fa-instagram"></a>
+  </div>
+</div>
+
+<script>
+function myFunction() {
+
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>
