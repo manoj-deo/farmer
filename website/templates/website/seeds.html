@@ -18,10 +18,13 @@
   {% for i in content%}
   <div class="column">
     <div class="card">
-      <h3>{{i.name}}</h3>
+      {% if i.image %}
+        <img src="{{i.image.url}}">
+      {% else %}
+        <img src="{% static 'images/download.png' %}"/>
+      {% endif%}
       <p>{{i.description}}</p>
-      <p>Some text</p>
-      <a href="{% url 'create_order'%}">ORDER</a>
+      <button><a href="{% url 'create_order'%}">ORDER</a></button>
     </div>
   </div>
   {% endfor %}

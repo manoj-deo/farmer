@@ -15,8 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.urls import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from . import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('website.urls')),
+    path('accounts/', include('allauth.urls')),
 ]
+urlpatterns += staticfiles_urlpatterns() #adding directory of staticfiles (containing relevant media, css and js for the pages)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)# adding directory for media images

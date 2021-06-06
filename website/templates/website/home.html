@@ -22,29 +22,18 @@
     <div class="numbertext">3 / 3</div>
     <img src="{% static "images/ss3.jpg" %}" alt="SAVE FARMERS" style="width:100%">
   </div>
-
-  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
   </div>
   <br>
 
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>
 
   <div class="about-section">
     <h1>About Us</h1>
-    <p>Some text about who we are and what we do.</p>
-    <p>Resize the browser window to see that this page is responsive by the way.</p>
+    <p>This Website is for indian farming community. Easy user interface and is farmer friendly and doorstep delivery of the products save the precious time of farmers. We focus on sustainable agriculture and empowerment of farmers.</p>
   </div>
 
   <div class="about-section">
     <h1>Contact Us</h1>
-    <p>Some text about who we are and what we do.</p>
-    <p>Resize the browser window to see that this page is responsive by the way.</p>
+    <p>Please feel free to contact us anytime!</p>
   </div>
 
 
@@ -59,9 +48,11 @@
       slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
     slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2000); // Change image every 2 seconds
+    setTimeout(showSlides, 2000);
   }
   </script>
 {% endblock %}
