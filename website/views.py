@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import *
-from .forms import OrderForm
+from .forms import *
 from django.conf import settings
 from django.core.mail import send_mail
 from django.core.mail import send_mass_mail
@@ -19,14 +19,22 @@ def seeds(request):
 def contact(request):
    return render(request, 'website/contact.html')
 
-def CreateOrder(request):
-    form=OrderForm()
+def CreateOrder(request,pk):
+    #order=Orders.objects.get(id=pk)
+    order=Product.objects.get(id=pk)
+    form=OrderForm1(instance=order)
     if request.method == 'POST':
         print('PRINTING POST DATA:',request.POST)
-        form=OrderForm(request.POST)
+        form=OrderForm1(request.POST,instance=order)
         if form.is_valid():
-            form.save()
+            name = form.cleaned_data['name']
+            des = form.cleaned_data['description']
+            p = Orders(name_o=name, description_o=des)
+            p.save()
+            #return HttpResponse('SUCCESSFULL<br><a href="{%url ''%}>HOME</a>')
+            #return HttpResponse("""SUCCESSFULL <br><a href = "{{ url : 'seeds'}}">HOME</a>""")
             return redirect('/')
+
 
     context={'form':form}
     return render(request, "website/order_form.html",context)
